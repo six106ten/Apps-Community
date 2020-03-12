@@ -48,13 +48,15 @@
           - '{{path.stdout}}:{{path.stdout}}'
           - '/mnt:/mnt:rw'
           - '/etc/localtime:/etc/localtime:ro'
-          - '/mnt/unionfs/libary:/library:rw'
+          - '/mnt/unionfs/ebooks:/ebooks:rw'
+          - '/opt/appdata/{{pgrole}}/db:/db:rw'
 
     - name: 'Setting PG ENV'
       set_fact:
         pg_env:
           PUID: '1000'
           PGID: '1000'
+          CALIBRE_OVERRIDE_DATABASE_PATH: '/db/metadata.db'
 
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
