@@ -15,7 +15,7 @@
         pgrole: 'unmanic'
         intport: '8888'
         extport: '7777'
-        image: 'josh5/unmanic:latest'
+        image: 'six106ten/unmanic:latest'
 
     # CORE (MANDATORY) ############################################################
     - name: 'Including cron job'
@@ -44,7 +44,8 @@
         pg_volumes:
           - '/etc/localtime:/etc/localtime:ro'
           - '/opt/appdata/{{pgrole}}:/config'
-          - '/tmp/unmanic:/tmp/unmanic'
+          - '/mnt/unionfs/library:/library:rw'
+          - '/mnt/tmp/unmanic:/tmp/unmanic'
           - '{{path.stdout}}:{{path.stdout}}'
           - '/mnt:/mnt'
           
