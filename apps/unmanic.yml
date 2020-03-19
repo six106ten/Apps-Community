@@ -15,7 +15,7 @@
         pgrole: 'unmanic'
         intport: '8888'
         extport: '7777'
-        image: 'six106ten/unmanic:latest'
+        image: 'josh5/unmanic:latest'
 
     # CORE (MANDATORY) ############################################################
     - name: 'Including cron job'
